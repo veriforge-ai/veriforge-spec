@@ -1,5 +1,3 @@
-# veriforge-spec
-Open framework and protocol for verified AI decisions
 # VeriForge
 
 **VeriForge** is an open framework and protocol for **verified AI decisions**.
@@ -86,4 +84,47 @@ At a minimum, a VeriForge-compliant system performs the following steps:
 2. The decision tier is determined
 3. Appropriate verifier(s) are selected
 4. The output is evaluated against domain and risk constraints
-5. A certification, qualification, o
+5. A certification, qualification, or rejection is issued
+6. Verification evidence is recorded
+
+Verification may occur **before or after** an answer is generated. In some cases, the primary interaction is verification rather than generation.
+
+---
+
+## Implementation Approach
+
+VeriForge is designed to be implemented **on top of MCP-compatible gateways**.
+
+Existing gateways — such as **ContextForge** — can serve as execution engines for VeriForge verification workflows. In this model:
+
+- The gateway handles routing and orchestration
+- VeriForge defines verification semantics, controls, and certification requirements
+- Verification tools and experts are exposed as callable services
+
+This separation allows multiple independent implementations while preserving consistent verification behavior.
+
+---
+
+## What VeriForge Is Not
+
+VeriForge is not:
+- A new model architecture
+- A replacement for performance optimizations such as Mixture-of-Experts
+- A reasoning engine or inference system
+- Another MCP Server Gateway
+
+VeriForge complements advances in model architecture by providing **governance, assurance, and accountability**.
+
+---
+
+## Status
+
+VeriForge is in an early, exploratory stage.
+
+Feedback, critique, and real-world pressure testing are explicitly encouraged.
+
+---
+
+## License
+
+VeriForge is licensed under the **Apache License 2.0**.
